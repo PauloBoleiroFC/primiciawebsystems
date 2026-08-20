@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PrimiciaWebSystems — Landing Page
 
-## Getting Started
+Landing page moderna da **PrimiciaWebSystems**, com tema escuro/roxo, seções de serviços, IA, produtos e conversão via WhatsApp.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4 (`@theme` em `globals.css` — configuração CSS-first)
+- lucide-react
+
+> **Nota Tailwind 4:** a paleta e tokens ficam em `src/app/globals.css` via `@theme inline`. Não usamos `tailwind.config.ts` legado do TW3.
+
+## Como executar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/                 # layout, page, globals.css
+  components/          # seções da landing
+    illustrations/     # SVGs isométricos (fáceis de trocar por PNGs)
+  lib/constants.ts     # empresa, WhatsApp, navegação
+public/
+  illustrations/       # placeholders para imagens finais
+```
 
-## Learn More
+## Trocar ilustrações
 
-To learn more about Next.js, take a look at the following resources:
+Os componentes em `src/components/illustrations/` podem ser substituídos por:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```tsx
+import Image from "next/image";
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<Image
+  src="/illustrations/hero-laptop.png"
+  alt="Laptop com painel de controle"
+  width={560}
+  height={460}
+  className="h-auto w-full"
+  priority
+/>
+```
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Desenvolvimento |
+| `npm run build` | Build de produção |
+| `npm run start` | Servidor de produção |
+| `npm run lint` | ESLint |
