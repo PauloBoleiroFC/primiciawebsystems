@@ -22,6 +22,7 @@ const products: {
     name: "TripSuno",
     description:
       "Sistema completo para gestão e organização de viagens, roteiros e despesas.",
+    url: "https://tripsuno.com",
   },
 ];
 
