@@ -7,19 +7,19 @@ const products: {
   url?: string;
 }[] = [
   {
-    name: "DataTrade",
+    name: "DataTrade.com",
     description:
       "Sistema para gestão financeira e acompanhamento de investimentos.",
     url: "https://datatrade.com.br",
   },
   {
-    name: "PrimiciaFlex",
+    name: "PrimiciaFlex.com",
     description:
       "Plataforma inteligente para gestão de empresas prestadoras de serviços e assistências técnicas.",
     url: "https://primiciaflex.com.br",
   },
   {
-    name: "TripSuno",
+    name: "TripSuno.com",
     description:
       "Sistema completo para gestão e organização de viagens, roteiros e despesas.",
     url: "https://tripsuno.com",
